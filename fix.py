@@ -21,7 +21,7 @@ while restartProgram == True:
       city = input("Enter the city would you like weather data on: ")
       url = f"{base_url}?q={city}&units=imperial&APPID={appid}"
     elif (user_selection == "2"):
-      zip_code = input("Enter the 5 digit US zipcode you would like weather data on: ")
+      zip_code = input("Enter the 5 digit zipcode you would like weather data on: ")
       #zip_code = zip_code + US only?
       url = f"{base_url}?q={zip_code},us&units=imperial&APPID={appid}"
     else:
