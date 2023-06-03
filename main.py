@@ -1,9 +1,14 @@
 import json, requests
 
 #a simple greeting
-print('Welcome to my Weather Program!')
-print('')
-print('')
+def greet_user():
+  """display a simple greeting, and let user know purpose of program."""
+  print('Welcome to my Weather Program!')
+  print('The purpose of this program is to fetch weather details based on a city, or a zipcode.')
+  print('')
+  print('') 
+  
+greet_user()
   
 base_url = "https://api.openweathermap.org/data/2.5/weather"
 appid = "60d881cc499d9d328ff8e50c021ad6f2"
