@@ -1,10 +1,17 @@
 import json, requests
 
-#a simple greeting
-print('Welcome to my Weather Program!')
-print('')
-print('')
-  
+#a simple greeting, and a statement of purpose
+def greet_user():
+  """display a simple greeting, and let user know purpose of program."""
+  print('Welcome to my Weather Program!')
+  print('The purpose of this program is to fetch weather details based on your input.')
+  print('')
+  print('') 
+
+greet_user()
+
+
+
 base_url = "https://api.openweathermap.org/data/2.5/weather"
 appid = "60d881cc499d9d328ff8e50c021ad6f2"
 
@@ -21,7 +28,7 @@ while restartProgram == True:
       city = input("Enter the city would you like weather data on: ")
       url = f"{base_url}?q={city}&units=imperial&APPID={appid}"
     elif (user_selection == "2"):
-      zip_code = input("Enter the 5 digit zipcode you would like weather data on: ")
+      zip_code = input("Enter the 5 digit US zipcode you would like weather data on: ")
       #zip_code = zip_code + US only?
       url = f"{base_url}?q={zip_code},us&units=imperial&APPID={appid}"
     else:
@@ -33,7 +40,7 @@ while restartProgram == True:
     temp = unformated_data["main"]["temp"]
     if (city is None):
       city = unformated_data["name"]
-    print(f"The temprature in {city}: {temp}")
+    print(f"The temperature in {city}: {temp}")
     temp_max = unformated_data["main"]["temp_max"]
     print(f"The high there is: {temp_max}")
     feels_like = unformated_data["main"]["feels_like"]
